@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class TrafficSignal {
+    public static void main(String[] args) {
+        Scanner scan =new Scanner(System.in);
+        System.out.println("Name:Subasri p");
+        System.out.println("Reg no:2024503025");
+        System.out.print("Enter the Traffic colour:");
+        String trafficColor = scan.nextLine();
+        String color_lowercase = trafficColor.toLowerCase();
+        switch (color_lowercase) {
+            case "red":
+                System.out.println("Stop");
+                break;
+            case "yellow":
+                System.out.println("Ready to move");
+                break;
+            case "green":
+                System.out.println("to go");
+                break;
+            default:
+                System.out.println("invalid Color");
+        }
+    }
+}
