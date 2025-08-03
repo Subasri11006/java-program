@@ -1,0 +1,54 @@
+1.Write a Java program that reads a string from the user and convert the input to lowercase to handle uppercase letters. Use a character array to check each character and keep track of the counts. Finally, print the frequency of each vowel. Hint: Use the toCharArray() String method to convert the string into characters. Use toLowerCase() String method to convert the input to lowercase.
+ Code:
+  import java.util.Scanner;
+ public class Vowel {
+     public static void main(String[] args) {
+         Scanner scan = new Scanner(System.in);
+         int count_a = 0, count_e = 0, count_i = 0, count_o = 0, count_u = 0;
+         System.out.println("Name: Subasri P");
+         System.out.println("Reg no:2024503025");
+         System.out.print("Enter the string:");
+         String str1 = scan.nextLine();
+         String str2 = str1.toLowerCase();
+         char[]letters=str2.toCharArray();
+ 
+        for (int i=0;i<str2.length();i++)
+         {
+             if (letters[i] == 'a')
+             {
+                 count_a++;
+             }
+             else if (letters[i] == 'e')
+             {
+                 count_e++;
+             }
+             else if (letters[i] == 'i')
+             {
+                 count_i++;
+             }
+             else if (letters[i] == 'o')
+             {
+                 count_o++;
+             }
+             else if (letters[i] == 'u')
+             {
+                 count_u++;
+             }
+             else continue;
+         }
+         System.out.println("\n TheFrequency of vowel in the given String....");
+         System.out.println("a=" + count_a + "times");
+         System.out.println("e=" + count_e + "times");
+         System.out.println("i=" + count_i + "times");
+         System.out.println("o=" + count_o + "times");
+         System.out.println("u=" + count_u + "times");
+     }
+ }
+output:
+Enter the string:network connecting
+The frequency of vowel in the given string....
+a=0times
+e=1times
+i=1times
+o=2times
+u=0times
