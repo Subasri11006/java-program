@@ -1,0 +1,45 @@
+Write a Java program that counts login failures only when the user is NOT "admin" and the password is wrong. Use the && operator to check conditions so the fail count increases only if needed. Print the fail count each time a non-admin login fails.
+    Code:
+ import java.util.Scanner;
+ class Admin
+ {
+     public static void main(String[] args)
+     {
+         Scanner sc=new Scanner(System.in);
+         String username="ADMIN";
+         String password="A123";
+         int failcount = 0;
+         boolean loginTry = true;
+         while (loginTry) {
+             Scanner scan=new Scanner (System.in);
+                     System.out.println("Name:Subasri P");
+             System.out.println("Reg no:2024503025");
+ 
+            System.out.print("Enter your username:");
+             String Username = sc.next();
+             System.out.print("Enter your password:");
+             String Password = sc.next();
+             if (!(Username.equals(username)) && !(Password.equals(password))) {
+                 failcount++;
+                 System.out.println("login failed (non-admin). fail count: " + failcount);
+                 System.out.print("Do you want to try again? (yes/no) : ");
+                 char choice = sc.next().charAt(0);
+                 sc.nextLine();
+                 if (choice == 'n' || choice == 'N') {
+                     loginTry = false;
+                     System.out.println("final failcount :" + failcount);
+                 }
+             }
+             else
+             {
+                 System.out.println("Login successful! WELCOME ");
+                 break;
+             }
+ 
+        }
+     }
+ }
+Output:
+Enter your username:ADMIN
+Enter your password:A123
+Login successful! WELCOME
