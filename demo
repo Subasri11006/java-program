@@ -1,0 +1,17 @@
+public class Demo { 
+    int Sname; 
+    String name; 
+ 
+    void show() { 
+        System.out.println("Subasri"); 
+        System.out.println("2024503025"); 
+        System.out.println("Sname=" + Sname); 
+        System.out.println("demo is a defalut constructor."); 
+    } 
+ 
+    public static void main(String[] args) { 
+        Demo obj = new Demo(); 
+        obj.show(); 
+ 
+    } 
+} 
