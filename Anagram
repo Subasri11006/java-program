@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Anagram {
+    public static void main(String[] arg) {
+        System.out.println("Subasri");
+        System.out.println("2024503025");
+        Scanner sc = new Scanner(System.in);
+        String str1, str2;
+        System.out.println("enter the string 1:");
+        str1 = sc.nextLine();
+        System.out.println("enter string 2:");
+        str2 = sc.nextLine();
+        boolean isAnagram;
+        if (isAnagram(str1,str2))
+            System.out.println("Yes, it is anagram");
+        else
+            System.out.println("not anagram");
+    }
+    public static boolean isAnagram(String str1, String str2)
+    {
+        if(str1.length()!=str2.length())
+        {
+            return false;
+        }
+        str1=str1.toLowerCase();
+        str2=str2.toLowerCase();
+        char[] ch1=str1.toCharArray();
+        char[] ch2=str2.toCharArray();
+        Arrays.sort(ch1);
+        Arrays.sort(ch2);
+        return Arrays.equals(ch1,ch2);
+    }
+}
