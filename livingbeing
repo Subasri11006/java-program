@@ -1,0 +1,36 @@
+1.Write a program to show single inheritance Class LivingBeing Methods: Breath() and Response() Class 
+Animal Methods: Walk() and NoOfLegs() 
+CODE: 
+class Livingbeing 
+{ 
+public void Breath() 
+{ 
+System.out.println("living being breath"); 
+} 
+public void Response() 
+{ 
+System.out.println("living being response"); 
+} 
+} 
+class Animal extends Livingbeing 
+{ 
+void walk() 
+{ 
+System.out.println("Animal can walk"); 
+} 
+void Nooflegs() 
+{ 
+System.out.println("Animal have 4 legs"); 
+} 
+} 
+public class SingleInheritance 
+{ 
+public static void main(String[] args) 
+{ 
+Animal dog=new Animal(); 
+dog.Breath(); 
+dog.Response(); 
+dog.walk(); 
+dog.Nooflegs(); 
+} 
+} 
