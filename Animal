@@ -1,0 +1,88 @@
+class Animal 
+{ 
+public void move(){} 
+public void move(String direction) {} 
+public void move(int distance) {} 
+public void move(String direction, int distance) {} 
+} 
+class Dog extends Animal 
+{ 
+public void move() 
+{ 
+System.out.println("dog can move"); 
+} 
+public void move(String direction) 
+{ 
+System.out.println("dog can move in "+" "+direction+" direction"); 
+} 
+public void move(int distance)  
+{ 
+System.out.println("dog can move "+distance+" distance"); 
+} 
+public void move(String direction, int distance){ 
+System.out.println("dog - "+direction); 
+System.out.println("dog - "+distance); 
+} 
+} 
+class Cat extends Animal 
+{ 
+public void move() 
+{ 
+System.out.println("cat can move"); 
+} 
+public void move(String direction) 
+{ 
+System.out.println("cat can move in "+direction+" direction"); 
+} 
+public void move(int distance)  
+{ 
+System.out.println("cat can move "+distance+" distance"); 
+} 
+public void move(String direction, int distance) 
+{ 
+System.out.println("cat - "+direction); 
+System.out.println("cat - "+distance); 
+} 
+} 
+class Bird extends Animal 
+{ 
+public void move() 
+{ 
+System.out.println("bird can move"); 
+} 
+public void move(String direction) 
+{ 
+System.out.println("bird can move in "+direction+" direction"); 
+} 
+public void move(int distance)  
+{ 
+System.out.println("bird can move "+distance+" distance"); 
+} 
+public void move(String direction, int distance) 
+{ 
+System.out.println("bird - "+direction); 
+System.out.println("bird - "+distance); 
+} 
+} 
+class Inheritance{ 
+public static void main(String[] arg)
+{ 
+Animal[] a={new Dog(), new Cat(), new Bird()}; 
+int l=a.length; 
+System.out.print("\n---run time polymorphism--\n"); 
+for(int i=0;i<l;i++) 
+{ 
+a[i].move(); 
+a[i].move("west"); 
+a[i].move(110); 
+a[i].move("east",500); 
+System.out.print("\n"); 
+} 
+System.out.print("\n--compile time polymorphism--\n"); 
+Dog d=new Dog(); 
+d.move(); 
+d.move("south"); 
+d.move(1500); 
+d.move("north",1200); 
+} 
+}
