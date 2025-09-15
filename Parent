@@ -1,0 +1,85 @@
+class Parent 
+{ 
+  public Number getValue() 
+     { 
+         return 10; 
+   } 
+    public void show() 
+     { 
+         System.out.println("Parent show()"); 
+     } 
+     public void display() 
+     { 
+         System.out.println("Parent display()"); 
+     } 
+     public void print(String msg) 
+     { 
+         System.out.println("Parent print(String): " + msg); 
+     } 
+     public void parentMethod() 
+     { 
+         System.out.println("Method in Parent"); 
+     } 
+     public static void staticMethod(int a) 
+     { 
+         System.out.println("Parent staticMethod(int): " + a); 
+} 
+     public static void staticMethod(String a) 
+     { 
+         System.out.println("Parent staticMethod(String): " + a); 
+     } 
+} 
+  class Child extends Parent 
+{ 
+  public Integer getValue() 
+     { 
+         return 100; 
+     } 
+     public void display(int x) 
+     { 
+         System.out.println("Child display(int): " + x); 
+     } 
+     public void print(int num) 
+     { 
+         System.out.println("Child print(int): " + num); 
+     } 
+     public void childMethod() 
+     { 
+         System.out.println("Method in Child"); 
+     } 
+} 
+  public class Demo 
+{ 
+    public static void main(String[] args) 
+     {
+System.out.println("=== i. Covariant Return Type Demo ==="); 
+         Parent p = new Child(); 
+         System.out.println("Value: " + p.getValue()); 
+         System.out.println("\n=== iii. Wrong Overriding vs Overloading ==="); 
+         Child c = new Child(); 
+         c.display(10); 
+         c.display(); 
+         System.out.println("\n=== vi. Method Overloading Demo ==="); 
+         c.print("Hello"); 
+         c.print(50); 
+         System.out.println("\n=== vii. Static Method Overloading Demo ==="); 
+         Parent.staticMethod(10); 
+         Parent.staticMethod("Test"); 
+         System.out.println("\n=== viii. Casting Demo ==="); 
+         Parent parentRef = new Child(); 
+         parentRef.parentMethod(); 
+         parentRef.show(); 
+         Parent p2 = new Parent(); 
+         { 
+             Child wrongCast = (Child) p2; 
+             wrongCast.childMethod(); 
+         } 
+         catch (ClassCastException e) 
+         { 
+             System.out.println("Wrong Downcasting: " + e);
+} 
+         Parent p3 = new Child(); 
+         Child safeCast = (Child) p3; 
+         safeCast.childMethod(); 
+     } 
+} 
