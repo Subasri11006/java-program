@@ -1,0 +1,35 @@
+import java.io.IOException;
+class SuperClass
+{
+    public void display() throws IOException
+    {
+        System.out.println("Superclass display method");
+        throw new IOException("IO error in SuperClass");
+    }
+}
+
+class SubClass extends SuperClass
+{
+    public void display() throws IOException
+    {
+        System.out.println("Subclass display method");
+        super.display();
+    }
+}
+
+public class ExceptionOverrideDemo
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Subasri/2024503025");
+        SuperClass obj = new SubClass();
+        try
+        {
+            obj.display();
+        }
+        catch (IOException e)
+        {
+            System.out.println("Caught checked exception: " + e);
+        }
+    }
+}
