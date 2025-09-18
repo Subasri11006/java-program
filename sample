@@ -1,0 +1,31 @@
+import java.util.Scanner; 
+class sample 
+{ 
+  public static void main(String[]args) 
+     { 
+         Scanner sc=new Scanner(System.in); 
+         double a=5.0/0; 
+         System.out.println("I am executable"); 
+         try 
+         { 
+             int b=5/0; 
+             String str=null; 
+             System.out.println(str.length()); 
+             System.out.println("i cannot execute"); 
+         } 
+         catch(ArithmeticException e) 
+         { 
+             System.out.println(e); 
+         } 
+         catch(java.lang.Exception e1) 
+         { 
+System.out.println("exception try to execute"); 
+} 
+finally 
+{ 
+int b=0; 
+System.out.println("Exception caught"); 
+} 
+System.out.println(" i am try to catch"); 
+} 
+} 
