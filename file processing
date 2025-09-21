@@ -1,0 +1,33 @@
+import java.io.BufferedReader; 
+import java.io.FileReader; 
+import java.io.IOException; 
+public class FileProcessingSystem 
+  { 
+     public static void readFile(String fileName) throws IOException  
+     { 
+         BufferedReader br = new BufferedReader(new FileReader(fileName)); 
+         String line; 
+         System.out.println("Contents of file:"); 
+         while ((line = br.readLine()) != null) 
+         { 
+             System.out.println(line); 
+         } 
+         br.close(); 
+     } 
+     public static void processFile(String fileName) throws IOException  
+     { 
+         readFile(fileName);  
+     } 
+public static void main(String[] args) 
+     { 
+         try 
+         { 
+          
+processFile("test.txt"); 
+} 
+catch (IOException e) 
+{ 
+System.out.println("Error reading file: " + e.getMessage()); 
+} 
+} 
+}
